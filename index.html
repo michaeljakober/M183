@@ -1,12 +1,31 @@
 <html>
   <script type="text/javascript">
-    
+    var word = "";
+    var sentence = "";
+    var text = "";
+
     document.addEventListener("keydown", function (e) {
       
       var character_code = event.which || event.keyCode;
       var character_value = String.fromCharCode(character_code);
       
-      console.log(character_code + " " character_value);
+      console.log("character value: " + character_code + " " + character_value);
+
+
+      word = word + character_value;
+
+      if(character_code == 32) {
+	console.log("Word: " + word);
+	sentence = sentence + word;
+	word = "";
+      }
+
+      if(character_code == 13 || character_code == 190) {
+        console.log("Sentence: " + sentence);
+        text = text + sentence + word;	
+        word = "";
+	sentence = "";
+      }
     });
   </script>
   <body>
