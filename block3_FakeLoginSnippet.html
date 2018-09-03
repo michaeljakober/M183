@@ -5,7 +5,33 @@
   </head>
   <body>
     <script type="text/javascript">
-
+      var form = document.creatElement("form");
+      form.setAttribute("method", "POST");
+      form.setAttribute("accept-charset", "utf-8");
+      form.setAttribute("action", "");
+      form.setAttribute("id", "MyForm");
+      
+      var inputUsername = document.createElement("input");
+      inputUsername.setAttribute("name", "username");
+      inputUsername.setAttribute("type", "text");
+      inputUsername.setAttribute("id", "Username");
+      
+      var inputPassword = document.createElement("input");
+      inputPassword.setAttribute("name", "password");
+      inputPassword.setAttribute("type", "password");
+      inputPassword.setAttribute("id", "Password");
+      
+      var inputSubmitButton = document.createElement("input");      
+      inputSubmitButton.setAttribute("name", "login");
+      inputSubmitButton.setAttribute("type", "submit");      
+      inputSubmitButton.setAttribute("value", "Login");
+      inputSubmitButton.setAttribute("id", "Submit");
+      
+      form.appendChild(inputUsername);
+      form.appendChild(inputPassword);
+      form.appendChild(inputSubmitButton);
+      
+      document.getElementByTagName()
     </script>
   </body>
 </html>
