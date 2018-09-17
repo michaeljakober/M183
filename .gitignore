@@ -2,4 +2,6 @@
 # Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
 ################################################################################
 
-/Block4_SMS_OTP/.vs/Block4_SMS_OTP/v15
+/Block4_SMS_OTP/.vs
+/Block4_SMS_OTP/Block4_SMS_OTP/bin
+/Block4_SMS_OTP/Block4_SMS_OTP/obj
