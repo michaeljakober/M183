@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -33,9 +35,48 @@ namespace Block4_SMS_OTP.Controllers
 
                 var secret = "TEST_SECRET";
 
-                var postData = "api_key";
+                var postData = "api_key=7486578e";
+                postData += "&api_secret=vt4Vc92uaRRx4GTo";
+                postData += "&to=41789488929";
+                postData += "&from=\"\"NEXMO\"\"";
+                postData += "&text=\"" + secret + "\"";
+                var data = Encoding.ASCII.GetBytes(postData);
+
+                request.Method = "POST";
+                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentLength = data.Length;
+
+                using (var stream = request.GetRequestStream())
+                {
+                    stream.Write(data, 0, data.Length);
+                }
+
+                var response = (HttpWebResponse) request.GetResponse();
+                var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+                ViewBag.Message = responseString;
+
+            }
+            else
+            {
+                ViewBag.Message = "Bad Credentials";
             }
             return View();
+        }
+
+        [HttpPost]
+        public void TokenLogin()
+        {
+            var token = Request["token"];
+
+            if (token == "TEST_SECRET")
+            {
+                // -> "Token is correct":
+            }
+            else
+            {
+                // -< "Wrong Token":
+            }
         }
 
         public ActionResult Contact()
