@@ -1,0 +1,17 @@
+﻿################################################################################
+# Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
+################################################################################
+
+/Block4_SMS_OTP/.vs
+/Block4_SMS_OTP/Block4_SMS_OTP/bin
+/Block4_SMS_OTP/Block4_SMS_OTP/obj
+/Block4_SMS_OTP/obj
+/Block6_SSO/.vs
+/Block6_SSO/Block6_SSO/bin
+/Block6_SSO/Block6_SSO/obj
+/Block6_SSO/obj
+
+/Block7_Session/.vs
+/Block7_Session/Block7_Session/bin
+/Block7_Session/Block7_Session/obj
+/Block7_Session/obj
