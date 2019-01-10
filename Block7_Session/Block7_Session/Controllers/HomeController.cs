@@ -14,20 +14,6 @@ namespace Block7_Session.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
         [HttpPost]
         public ActionResult Login()
         {
@@ -38,13 +24,14 @@ namespace Block7_Session.Controllers
             if ("michaeljakober".Equals(username) && "123456".Equals(password))
             {
                 ViewBag.Message = "Successfully logged in!";
-                if (eingeloggtbleiben == "true")
+                if (eingeloggtbleiben == "J")
                 {
-                    FormsAuthentication.SetAuthCookie(username, true);
+                    HttpCookie cookie = new HttpCookie("Sessioncookie", "Logged in");
+                    cookie.Expires = DateTime.Now.AddDays(14);
                 }
                 else
                 {
-                    FormsAuthentication.SetAuthCookie(username, false);
+                    Session["Logged in"] = true;
                 }
             }
             else
